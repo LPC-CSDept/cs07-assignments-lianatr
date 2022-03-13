@@ -8,3 +8,4 @@ while True:
     break
   else:
     print("this will not be executed")
+  prev_num = cnum
