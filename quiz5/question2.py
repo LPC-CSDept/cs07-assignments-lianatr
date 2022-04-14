@@ -9,7 +9,7 @@ for i in range (N):
     studentlist.append(students)
     scorelist = []
     for v in range (M):
-        scores = int(input("enter their scores ")) 
+        scores = int(input("enter their scores "))
         scorelist.append(scores)
         print (scorelist)
     matrix.append(scorelist)
