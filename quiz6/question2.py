@@ -3,17 +3,20 @@ list2 = []
 
 findeven = lambda c : c%2 == 0
 def getmerged(list1,list2):
-  new1 = []
-  new2 = []
+  # new1 = []
+  # new2 = []
+  # final = []
   for i in list1:
     if (findeven(i)):
-      new1.append(i)
+      yield (i)
+      # final.append(i)
   for i in list2:
     if (findeven(i)):
-      new2.append(i)
-  final = new1 + new2
-  for i in final:
-    yield (i)
+      yield (i)
+      # final.append(i)
+  # final = new1 + new2
+  # for i in final:
+    # yield (i)
 
 n = int(input("how many values in list 1? "))
 m = int(input("how many values in list 2? "))
