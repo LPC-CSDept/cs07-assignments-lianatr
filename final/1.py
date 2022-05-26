@@ -22,6 +22,30 @@ labels = ["state","name","gender","number"]
 for line in caFile:
   line = line.replace("\n","")
   line = line.split(" ")
+from functools import reduce
+caFile = open('final/CA2021.txt')
+orFile = open('final/OR2021.txt')
+
+#question 1-1
+
+caMale = []
+caMaleNum = []
+caFemale = []
+caFemaleNum = []
+
+orMale = []
+orMaleNum = []
+orFemale = []
+orFemaleNum = []
+
+allData = []
+labels = ["state","name","gender","number"]
+
+#question 1-2
+
+for line in caFile:
+  line = line.replace("\n","")
+  line = line.split(" ")
   caMale.append(line[1])
   caMaleNum.append(line[2])
   caFemale.append(line[3])
@@ -44,11 +68,11 @@ for i in range(len(orFemale)):
   allData.append(dict(zip(labels,data)))
   
 for i in range(len(caMale)):
-  data = ["OR"]+[caMale[i]]+["Male"]+[caMaleNum[i]]
+  data = ["CA"]+[caMale[i]]+["Male"]+[caMaleNum[i]]
   allData.append(dict(zip(labels,data)))
   
 for i in range(len(caFemale)):
-  data = ["OR"]+[caFemale[i]]+["Female"]+[caFemaleNum[i]]
+  data = ["CA"]+[caFemale[i]]+["Female"]+[caFemaleNum[i]]
   allData.append(dict(zip(labels,data)))
 
 #question 1-3
@@ -69,8 +93,10 @@ orFemalesE = sorted(orFemalesE, key=lambda x: x["number"], reverse=True)
 for people in orFemalesE[:10]:
   print(people)
 
+print("-------------------------------------")
 
+1-4
 orFemales = list(map(lambda x:int(x["number"].replace(",","")),orFemales))
-sumnum = lambda x,y: x+y('number')
+sumnum = lambda x,y: x+y
 totalNumber = reduce(sumnum, orFemales, 0)
 print(totalNumber)
